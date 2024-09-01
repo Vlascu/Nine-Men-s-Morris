@@ -1,0 +1,9 @@
+<map id="Game::MovePiece" name="Game::MovePiece">
+<area shape="rect" id="Node000001" title="Moves a piece from one node to another." alt="" coords="396,5,523,32"/>
+<area shape="rect" id="Node000002" href="$class_game.html#a450c6b35926894336d1fed46e082b5a4" title="Allows the computer to make a move." alt="" coords="184,5,348,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="381,30,348,30,348,25,380,25"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="364,7,396,7,396,13,364,12"/>
+<area shape="rect" id="Node000003" href="$class_game.html#af463d4f3b0602cd33339b921ee4448e9" title="Places a piece at a specified node index." alt="" coords="5,5,136,32"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="168,30,136,30,136,25,168,25"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="151,7,183,7,183,12,151,12"/>
+</map>

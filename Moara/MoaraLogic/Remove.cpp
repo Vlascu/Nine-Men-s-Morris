@@ -1,0 +1,70 @@
+#include "Remove.h"
+#include "Logger.h"
+#include "Game.h"
+
+#include "InvalidStateException.h"
+
+static log4cpp::Category& LOG = Logger::getInstance().getRoot();
+
+Remove::Remove(Game* game, int index)
+	: Command(game)
+	, m_index(index)
+{}
+
+void Remove::Execute()
+{
+	if (m_game->m_state != EGameState::Removing)
+	{
+		LOG.notice("Not in remove state");
+		throw InvalidStateException("Can't remove now");
+	}
+
+	m_board->RemovePiece(m_index, m_game->m_players[m_game->m_activePlayer]->GetType());
+	LOG.info("Piece removed at index {%d}", m_index);
+
+	m_game->NotifyAll(m_game->GetNotifyRemovedPiece(m_index));
+
+	m_game->CheckWiningPlayer();
+	if (m_game->m_winner != EPlayerType::None)// stop if we have a winner
+		return;
+
+	m_game->m_state = EGameState::Moving;
+	for (const auto& player : m_game->m_players)
+	{
+		if (m_board->GetPlayerPiecesToPlace(player->GetType()) > 0)
+		{
+			m_game->m_state = EGameState::Placing;
+			LOG.info("Game state changed to Placing");
+			break;
+		}
+	}
+
+	m_game->NotifyAll(m_game->GetNotifyGameStateChanged(m_game->m_state));
+
+	m_game->NextPlayer();
+}
+
+void Remove::Undo()
+{
+	m_board->UndoRemovePiece(m_index, m_game->m_players[m_game->m_activePlayer]->GetType());
+
+	auto nodeType = m_game->m_players[m_game->m_activePlayer]->GetType();
+	m_game->NotifyAll(m_game->GetNotifyAddedPiece(m_index, nodeType));
+
+	m_game->m_state = EGameState::Removing;
+	m_game->NotifyAll(m_game->GetNotifyGameStateChanged(m_game->m_state));
+
+	m_game->PrevPlayer();
+}
+
+void Remove::Print(std::ostream& os) const
+{
+	os << static_cast<int>(CommandType::Remove) << ' ';
+	os << m_index << ' ';
+	os << '\n';
+}
+
+void Remove::Read(std::istream& is)
+{
+	is >> m_index;
+}

@@ -1,0 +1,23 @@
+\doxysection{Board\+Factory.\+h}
+\hypertarget{_board_factory_8h_source}{}\label{_board_factory_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IBoard.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameConfig.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board_factory}{BoardFactory}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{static}\ BoardPtr\ Create(\mbox{\hyperlink{_e_board_type_8h_abcc63908afb1bb0f38703b3e612d81f8}{EBoardType}}\ boardType,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PieceTypeList\ players,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ BoardConfigMatrix\&\ boardMatrix,\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ piecesToPlace);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ BoardPtr\ Create(\mbox{\hyperlink{_e_board_type_8h_abcc63908afb1bb0f38703b3e612d81f8}{EBoardType}}\ boardType,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PieceTypeList\ players,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ifstream\&\ file);}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+
+\end{DoxyCode}

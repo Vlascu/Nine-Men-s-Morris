@@ -1,0 +1,226 @@
+\doxysection{Normal\+Board Class Reference}
+\hypertarget{class_normal_board}{}\label{class_normal_board}\index{NormalBoard@{NormalBoard}}
+
+
+Inheritance diagram for Normal\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_normal_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Normal\+Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_normal_board__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_normal_board_a3f4e46217ce341173c7010d5469ac93b}\label{class_normal_board_a3f4e46217ce341173c7010d5469ac93b} 
+{\bfseries Normal\+Board} (const Piece\+Type\+List \&players, const Board\+Config\+Matrix \&board\+Matrix, int pieces\+To\+Place)
+\item 
+\Hypertarget{class_normal_board_afd90272941fbee02b07379d51424bf01}\label{class_normal_board_afd90272941fbee02b07379d51424bf01} 
+{\bfseries Normal\+Board} (const Piece\+Type\+List \&players, std\+::ifstream \&file)
+\item 
+\mbox{\hyperlink{_e_board_type_8h_abcc63908afb1bb0f38703b3e612d81f8}{EBoard\+Type}} \mbox{\hyperlink{class_normal_board_a9cd4dc98318142fcfdb16b8fbbfe3d39}{Get\+Board\+Type}} () const override final
+\item 
+void \mbox{\hyperlink{class_normal_board_ac0db3e100f21ccabb9e9bf4c569c9d67}{Load\+From\+Config}} (const Piece\+Type\+List \&players, const Board\+Config\+Matrix \&board\+Matrix, int pieces\+To\+Place) override final
+\item 
+void \mbox{\hyperlink{class_normal_board_ad0dddd4b817da212a9272395a170eb4d}{Load\+Board}} (const Piece\+Type\+List \&players, std\+::ifstream \&file) override final
+\item 
+void \mbox{\hyperlink{class_normal_board_aade1e26deb8bc5b622abef6ae847f93f}{Save\+Board}} (std\+::ofstream \&file) const override final
+\item 
+bool \mbox{\hyperlink{class_normal_board_a4e42117a32b28816b645936560fd5cda}{Can\+Be\+Full\+Line}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} node\+Piece\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}, uint8\+\_\+t index\+To\+Ignore=255) const override final
+\begin{DoxyCompactList}\small\item\em Checks if a node can be part of a full line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_normal_board_a1f7bcff852d2a90c79db6b62a3cbb556}{Is\+Full\+Line}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} current\+Node\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}, uint8\+\_\+t index\+To\+Ignore=255, bool windmill=false) const override final
+\begin{DoxyCompactList}\small\item\em Checks if a node is part of a full line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_normal_board_a6114d42ed6eeedd1b538cc67a528d6e5}{Is\+Windmill\+Rule}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} current\+Node\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}) const override final
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (const Piece\+Type\+List \&players, const Board\+Config\+Matrix \&board\+Matrix, int pieces\+To\+Place)
+\item 
+{\bfseries Board} (const Piece\+Type\+List \&players, std\+::ifstream \&file)
+\item 
+\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} \mbox{\hyperlink{class_board_a47c635da0839744ed7f810765d51103d}{Get\+Node\+Type}} (uint8\+\_\+t node\+Index) const override final
+\item 
+Piece\+Type\+List \mbox{\hyperlink{class_board_a351c61b25b0211bf1ed4e328e8615169}{Get\+All\+Nodes\+Type}} () const override final
+\item 
+Piece\+Indexes \mbox{\hyperlink{class_board_a78af3099809d1867e06041b7c67aab48}{Get\+Same\+Piece\+Type\+Node\+Indexes}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} type) const override final
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_board_afbb3d8b5dff1f4684e89dce0a438bd08}{Get\+Nodes\+Count}} () const override final
+\item 
+EBoard\+State \mbox{\hyperlink{class_board_accd622bbf6535a1c99bfd68a5bb8e62d}{Get\+Board\+State}} () const override final
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_board_a24dff8797e9c7fae11936a26a37e528f}{Get\+Player\+Pieces\+On\+Table}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const override final
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_board_a2bb0d9e44ce77c8a4061ee24c673a2d9}{Get\+Player\+Pieces\+To\+Place}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const override final
+\item 
+void \mbox{\hyperlink{class_board_a1778a00a578f425a916c532fb98a0333}{Add\+Piece}} (uint8\+\_\+t node\+Index, Moving\+Player\+Ptr player) override final
+\item 
+void \mbox{\hyperlink{class_board_a91efd7908c9bc0b367e0f45bba8df73c}{Move\+Piece}} (uint8\+\_\+t first\+Node\+Index, uint8\+\_\+t second\+Node\+Index, Moving\+Player\+Ptr player) override final
+\item 
+void \mbox{\hyperlink{class_board_a299bb1f5deabb00bfe436b7d6c26be48}{Remove\+Piece}} (uint8\+\_\+t node\+Index, Moving\+Player\+Ptr player) override final
+\item 
+Node\+List \mbox{\hyperlink{class_board_aef5a957756aa96fbcf833613e2097c40}{Get\+All\+Nodes}} () const override final
+\begin{DoxyCompactList}\small\item\em Retrieves all nodes on the game board. \end{DoxyCompactList}\item 
+Piece\+Indexes \mbox{\hyperlink{class_board_a8e01e3713ee6ca57d6ac2b8c36ca56c1}{Get\+Possible\+Places}} () const override final
+\begin{DoxyCompactList}\small\item\em Gets the possible positions where pieces can be placed. \end{DoxyCompactList}\item 
+Piece\+Indexes \mbox{\hyperlink{class_board_a20d35ec70735f5affd75df527d00540e}{Get\+Possible\+Moves\+From\+Node}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const override final
+\begin{DoxyCompactList}\small\item\em Gets possible moves from a specific node for a given player. \end{DoxyCompactList}\item 
+Piece\+Indexes \mbox{\hyperlink{class_board_a43dd8e6b96cfd79a19f2f1e5e70a8e04}{Get\+Possible\+Moves}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const override final
+\begin{DoxyCompactList}\small\item\em Gets all possible moves for a given player. \end{DoxyCompactList}\item 
+Piece\+Indexes \mbox{\hyperlink{class_board_aa29bc04fd2db1cc1dcea88d04765dd9e}{Get\+Possible\+Removes}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const override final
+\begin{DoxyCompactList}\small\item\em Gets all possible pieces that can be removed for a given player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_aa31b872d58ff0fcc79150ab3a74099e8}{Undo\+Add\+Piece}} (uint8\+\_\+t node\+Index) override final
+\item 
+void \mbox{\hyperlink{class_board_ad48659d0548b68fabad706209de6d7fd}{Undo\+Move\+Piece}} (uint8\+\_\+t first\+Node\+Index, uint8\+\_\+t second\+Node\+Index) override final
+\item 
+void \mbox{\hyperlink{class_board_abdab4feada021fbf8b7fa01f3a45da39}{Undo\+Remove\+Piece}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) override final
+\item 
+void \mbox{\hyperlink{class_board_a42a60b2c90495f637daf9847bf0250fe}{Remove\+Player\+Pieces}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) override final
+\item 
+void \mbox{\hyperlink{class_board_a1de6fed3acc27225f8582b6b26246459}{Is\+Move\+Valid}} (uint8\+\_\+t first\+Node\+Index, uint8\+\_\+t second\+Node\+Index, Moving\+Player\+Ptr moving\+Player) const override final
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_board}{Board}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bfseries Can\+Remove\+Piece} (uint8\+\_\+t node\+Index) const final
+\item 
+virtual \mbox{\hyperlink{class_i_node}{INode}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Node\+From\+Index} (uint8\+\_\+t index) const final
+\item 
+virtual uint8\+\_\+t {\bfseries Get\+Index\+From\+Node} (\mbox{\hyperlink{class_i_node}{INode}} \texorpdfstring{$\ast$}{*}node) const final
+\item 
+virtual uint8\+\_\+t {\bfseries Count\+Same\+Piece} (ENeighbours\+Position direction, \mbox{\hyperlink{class_i_node}{INode}} \texorpdfstring{$\ast$}{*}node, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} windmill\+Piece\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}, uint8\+\_\+t index\+To\+Ignore=255, bool windmill=false) const final
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board}}}
+\begin{DoxyCompactItemize}
+\item 
+Node\+List {\bfseries m\+\_\+nodes}
+\item 
+EBoard\+State {\bfseries m\+\_\+board\+State}
+\item 
+Players\+Pieces {\bfseries m\+\_\+players\+Pieces}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_normal_board_a4e42117a32b28816b645936560fd5cda}\index{NormalBoard@{NormalBoard}!CanBeFullLine@{CanBeFullLine}}
+\index{CanBeFullLine@{CanBeFullLine}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{CanBeFullLine()}{CanBeFullLine()}}
+{\footnotesize\ttfamily \label{class_normal_board_a4e42117a32b28816b645936560fd5cda} 
+bool Normal\+Board\+::\+Can\+Be\+Full\+Line (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{node\+Index}{, }\item[{\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}}}]{node\+Piece\+Type}{ = {\ttfamily \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}}, }\item[{uint8\+\_\+t}]{index\+To\+Ignore}{ = {\ttfamily 255}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if a node can be part of a full line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Index} & The index of the node to check. \\
+\hline
+{\em node\+Piece\+Type} & The type of the piece at the node (default is \doxylink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}). \\
+\hline
+{\em index\+To\+Ignore} & The index to ignore in the check (default is 255). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the node can be part of a full line, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_board_computer_a76c927ca0fd2725ce7963423617156e6}{IBoard\+Computer}}.
+
+\Hypertarget{class_normal_board_a9cd4dc98318142fcfdb16b8fbbfe3d39}\index{NormalBoard@{NormalBoard}!GetBoardType@{GetBoardType}}
+\index{GetBoardType@{GetBoardType}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{GetBoardType()}{GetBoardType()}}
+{\footnotesize\ttfamily \label{class_normal_board_a9cd4dc98318142fcfdb16b8fbbfe3d39} 
+\mbox{\hyperlink{_e_board_type_8h_abcc63908afb1bb0f38703b3e612d81f8}{EBoard\+Type}} Normal\+Board\+::\+Get\+Board\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_board}{IBoard}}.
+
+\Hypertarget{class_normal_board_a1f7bcff852d2a90c79db6b62a3cbb556}\index{NormalBoard@{NormalBoard}!IsFullLine@{IsFullLine}}
+\index{IsFullLine@{IsFullLine}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{IsFullLine()}{IsFullLine()}}
+{\footnotesize\ttfamily \label{class_normal_board_a1f7bcff852d2a90c79db6b62a3cbb556} 
+bool Normal\+Board\+::\+Is\+Full\+Line (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{node\+Index}{, }\item[{\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}}}]{current\+Node\+Type}{ = {\ttfamily \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}}, }\item[{uint8\+\_\+t}]{index\+To\+Ignore}{ = {\ttfamily 255}, }\item[{bool}]{windmill}{ = {\ttfamily false}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if a node is part of a full line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Index} & The index of the node to check. \\
+\hline
+{\em current\+Node\+Type} & The type of the piece at the node (default is \doxylink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}). \\
+\hline
+{\em index\+To\+Ignore} & The index to ignore in the check (default is 255). \\
+\hline
+{\em windmill} & True if checking for a windmill formation, false otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the node is part of a full line, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_board_computer_a60ee8eaba8641cccde47a657ffe580b0}{IBoard\+Computer}}.
+
+\Hypertarget{class_normal_board_a6114d42ed6eeedd1b538cc67a528d6e5}\index{NormalBoard@{NormalBoard}!IsWindmillRule@{IsWindmillRule}}
+\index{IsWindmillRule@{IsWindmillRule}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{IsWindmillRule()}{IsWindmillRule()}}
+{\footnotesize\ttfamily \label{class_normal_board_a6114d42ed6eeedd1b538cc67a528d6e5} 
+bool Normal\+Board\+::\+Is\+Windmill\+Rule (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{node\+Index}{, }\item[{\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}}}]{current\+Node\+Type}{ = {\ttfamily \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_board}{IBoard}}.
+
+\Hypertarget{class_normal_board_ad0dddd4b817da212a9272395a170eb4d}\index{NormalBoard@{NormalBoard}!LoadBoard@{LoadBoard}}
+\index{LoadBoard@{LoadBoard}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{LoadBoard()}{LoadBoard()}}
+{\footnotesize\ttfamily \label{class_normal_board_ad0dddd4b817da212a9272395a170eb4d} 
+void Normal\+Board\+::\+Load\+Board (\begin{DoxyParamCaption}\item[{const Piece\+Type\+List \&}]{players}{, }\item[{std\+::ifstream \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_board_loader}{IBoard\+Loader}}.
+
+\Hypertarget{class_normal_board_ac0db3e100f21ccabb9e9bf4c569c9d67}\index{NormalBoard@{NormalBoard}!LoadFromConfig@{LoadFromConfig}}
+\index{LoadFromConfig@{LoadFromConfig}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{LoadFromConfig()}{LoadFromConfig()}}
+{\footnotesize\ttfamily \label{class_normal_board_ac0db3e100f21ccabb9e9bf4c569c9d67} 
+void Normal\+Board\+::\+Load\+From\+Config (\begin{DoxyParamCaption}\item[{const Piece\+Type\+List \&}]{players}{, }\item[{const Board\+Config\+Matrix \&}]{board\+Matrix}{, }\item[{int}]{pieces\+To\+Place}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_board_loader}{IBoard\+Loader}}.
+
+\Hypertarget{class_normal_board_aade1e26deb8bc5b622abef6ae847f93f}\index{NormalBoard@{NormalBoard}!SaveBoard@{SaveBoard}}
+\index{SaveBoard@{SaveBoard}!NormalBoard@{NormalBoard}}
+\doxysubsubsection{\texorpdfstring{SaveBoard()}{SaveBoard()}}
+{\footnotesize\ttfamily \label{class_normal_board_aade1e26deb8bc5b622abef6ae847f93f} 
+void Normal\+Board\+::\+Save\+Board (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_board_loader}{IBoard\+Loader}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Normal\+Board.\+h\item 
+Normal\+Board.\+cpp\end{DoxyCompactItemize}

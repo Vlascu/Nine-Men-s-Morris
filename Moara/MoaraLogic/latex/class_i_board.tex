@@ -1,0 +1,107 @@
+\doxysection{IBoard Class Reference}
+\hypertarget{class_i_board}{}\label{class_i_board}\index{IBoard@{IBoard}}
+
+
+Inheritance diagram for IBoard\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IBoard\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_i_board__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_board_a7da8d4dea7dafdd56445ba97b905373c}\label{class_i_board_a7da8d4dea7dafdd56445ba97b905373c} 
+virtual \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} {\bfseries Get\+Node\+Type} (uint8\+\_\+t node\+Index) const =0
+\item 
+\Hypertarget{class_i_board_a34162c1154c45e1f75d1c11a4cdf1b7e}\label{class_i_board_a34162c1154c45e1f75d1c11a4cdf1b7e} 
+virtual Piece\+Type\+List {\bfseries Get\+All\+Nodes\+Type} () const =0
+\item 
+\Hypertarget{class_i_board_a096e730fc9e9db352d49283b086c6dbd}\label{class_i_board_a096e730fc9e9db352d49283b086c6dbd} 
+virtual uint8\+\_\+t {\bfseries Get\+Nodes\+Count} () const =0
+\item 
+\Hypertarget{class_i_board_aff6eb737977e925c33146fa4b742bddd}\label{class_i_board_aff6eb737977e925c33146fa4b742bddd} 
+virtual Piece\+Indexes {\bfseries Get\+Same\+Piece\+Type\+Node\+Indexes} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} type) const =0
+\item 
+\Hypertarget{class_i_board_a5a776cbfda749fc91f197a4939908907}\label{class_i_board_a5a776cbfda749fc91f197a4939908907} 
+virtual EBoard\+State {\bfseries Get\+Board\+State} () const =0
+\item 
+\Hypertarget{class_i_board_a23329b36e4796215173568499a2c7cd0}\label{class_i_board_a23329b36e4796215173568499a2c7cd0} 
+virtual uint8\+\_\+t {\bfseries Get\+Player\+Pieces\+On\+Table} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const =0
+\item 
+\Hypertarget{class_i_board_af540e4bcfebc396781dbecb56eb8abb8}\label{class_i_board_af540e4bcfebc396781dbecb56eb8abb8} 
+virtual uint8\+\_\+t {\bfseries Get\+Player\+Pieces\+To\+Place} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const =0
+\item 
+\Hypertarget{class_i_board_a68e10f0cfc14fca292925f99b5b50adc}\label{class_i_board_a68e10f0cfc14fca292925f99b5b50adc} 
+virtual void {\bfseries Add\+Piece} (uint8\+\_\+t node\+Index, Moving\+Player\+Ptr player)=0
+\item 
+\Hypertarget{class_i_board_a441e7160e173664d1f7c2876ce703831}\label{class_i_board_a441e7160e173664d1f7c2876ce703831} 
+virtual void {\bfseries Move\+Piece} (uint8\+\_\+t first\+Node\+Index, uint8\+\_\+t second\+Node\+Index, Moving\+Player\+Ptr moving\+Player)=0
+\item 
+\Hypertarget{class_i_board_aad73367d21faa7dd4dd14dd897024806}\label{class_i_board_aad73367d21faa7dd4dd14dd897024806} 
+virtual void {\bfseries Remove\+Piece} (uint8\+\_\+t node\+Index, Moving\+Player\+Ptr player)=0
+\item 
+\Hypertarget{class_i_board_aeb52b52a3196794d1a0916cb075ded85}\label{class_i_board_aeb52b52a3196794d1a0916cb075ded85} 
+virtual void {\bfseries Undo\+Add\+Piece} (uint8\+\_\+t node\+Index)=0
+\item 
+\Hypertarget{class_i_board_a02c6afcd92a957ef8c2e9d7619a8a52b}\label{class_i_board_a02c6afcd92a957ef8c2e9d7619a8a52b} 
+virtual void {\bfseries Undo\+Move\+Piece} (uint8\+\_\+t first\+Node\+Index, uint8\+\_\+t second\+Node\+Index)=0
+\item 
+\Hypertarget{class_i_board_aa76248ab1c9de58756470f9c56b7a14c}\label{class_i_board_aa76248ab1c9de58756470f9c56b7a14c} 
+virtual void {\bfseries Undo\+Remove\+Piece} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player)=0
+\item 
+\Hypertarget{class_i_board_a144db4fc45aeebc516a4607c361e4317}\label{class_i_board_a144db4fc45aeebc516a4607c361e4317} 
+virtual void {\bfseries Remove\+Player\+Pieces} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player)=0
+\item 
+\Hypertarget{class_i_board_ac09730b7a155a13381b486aa4dde797d}\label{class_i_board_ac09730b7a155a13381b486aa4dde797d} 
+virtual void {\bfseries Is\+Move\+Valid} (uint8\+\_\+t first\+Node\+Index, uint8\+\_\+t second\+Node\+Index, Moving\+Player\+Ptr moving\+Player) const =0
+\item 
+\Hypertarget{class_i_board_a789e0f8b29be195090699afd007b538c}\label{class_i_board_a789e0f8b29be195090699afd007b538c} 
+virtual bool {\bfseries Is\+Windmill\+Rule} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} current\+Node\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}) const =0
+\item 
+\Hypertarget{class_i_board_ae8ff6d48767b1eabdabd9b8de65157cd}\label{class_i_board_ae8ff6d48767b1eabdabd9b8de65157cd} 
+virtual \mbox{\hyperlink{_e_board_type_8h_abcc63908afb1bb0f38703b3e612d81f8}{EBoard\+Type}} {\bfseries Get\+Board\+Type} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_board_loader}{IBoard\+Loader}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Load\+Board} (const Piece\+Type\+List \&players, std\+::ifstream \&file)=0
+\item 
+virtual void {\bfseries Load\+From\+Config} (const Piece\+Type\+List \&players, const Board\+Config\+Matrix \&board\+Matrix, int pieces\+To\+Place)=0
+\item 
+virtual void {\bfseries Save\+Board} (std\+::ofstream \&file) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_board_computer}{IBoard\+Computer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual Node\+List \mbox{\hyperlink{class_i_board_computer_a2fd48ae92402755edcb58528fc00dab3}{Get\+All\+Nodes}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves all nodes on the game board. \end{DoxyCompactList}\item 
+virtual Piece\+Indexes \mbox{\hyperlink{class_i_board_computer_aa5bbe28423a4d65c546447d81d233f46}{Get\+Possible\+Places}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the possible positions where pieces can be placed. \end{DoxyCompactList}\item 
+virtual Piece\+Indexes \mbox{\hyperlink{class_i_board_computer_a188ae1e593e0173897c65d7b923738c9}{Get\+Possible\+Moves\+From\+Node}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const =0
+\begin{DoxyCompactList}\small\item\em Gets possible moves from a specific node for a given player. \end{DoxyCompactList}\item 
+virtual Piece\+Indexes \mbox{\hyperlink{class_i_board_computer_a60107dc947d01724fdaacd71167f109a}{Get\+Possible\+Moves}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const =0
+\begin{DoxyCompactList}\small\item\em Gets all possible moves for a given player. \end{DoxyCompactList}\item 
+virtual Piece\+Indexes \mbox{\hyperlink{class_i_board_computer_a3e19d991f46766d54e803085cc28a801}{Get\+Possible\+Removes}} (\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayer\+Type}} player) const =0
+\begin{DoxyCompactList}\small\item\em Gets all possible pieces that can be removed for a given player. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_board_computer_a76c927ca0fd2725ce7963423617156e6}{Can\+Be\+Full\+Line}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} node\+Piece\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}, uint8\+\_\+t index\+To\+Ignore=255) const =0
+\begin{DoxyCompactList}\small\item\em Checks if a node can be part of a full line. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_board_computer_a60ee8eaba8641cccde47a657ffe580b0}{Is\+Full\+Line}} (uint8\+\_\+t node\+Index, \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}} current\+Node\+Type=\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPiece\+Type\+::\+None}}, uint8\+\_\+t index\+To\+Ignore=255, bool windmill=false) const =0
+\begin{DoxyCompactList}\small\item\em Checks if a node is part of a full line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+IBoard.\+h\end{DoxyCompactItemize}

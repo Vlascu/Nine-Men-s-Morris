@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,81,109,108"/>
+<area shape="rect" id="Node000001" href="$class_file_exception.html" title=" " alt="" coords="193,5,293,32"/>
+<area shape="poly" id="edge14_Node000000_Node000001" title=" " alt="" coords="94,71,156,42,191,29,193,34,158,46,96,76"/>
+<area shape="rect" id="Node000002" href="$class_invalid_move_exception.html" title=" " alt="" coords="171,56,315,83"/>
+<area shape="poly" id="edge15_Node000000_Node000002" title=" " alt="" coords="124,83,170,77,171,82,124,88"/>
+<area shape="rect" id="Node000003" href="$class_invalid_neighbour_exception.html" title=" " alt="" coords="157,107,329,133"/>
+<area shape="poly" id="edge16_Node000000_Node000003" title=" " alt="" coords="124,101,157,106,156,111,123,106"/>
+<area shape="rect" id="Node000004" href="$class_invalid_state_exception.html" title=" " alt="" coords="170,157,316,184"/>
+<area shape="poly" id="edge17_Node000000_Node000004" title=" " alt="" coords="96,113,158,143,190,154,189,159,156,148,94,118"/>
+</map>

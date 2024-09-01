@@ -1,0 +1,368 @@
+#include "Board.h"
+#include "FileManager.h"
+#include "Logger.h"
+
+#include "InvalidMoveException.h"
+
+#include <exception>
+#include <stdexcept>
+#include <ranges>
+#include <algorithm>
+
+
+static log4cpp::Category& LOG = Logger::getInstance().getRoot();
+
+Board::Board()
+	: m_boardState{ EBoardState::None }
+	, m_nodes{}
+	, m_playersPieces{}
+{}
+
+Board::Board(const PieceTypeList& players, const BoardConfigMatrix& boardMatrix, int piecesToPlace)
+	: m_boardState{ EBoardState::None }
+	, m_nodes{}
+	, m_playersPieces{}
+{}
+
+Board::Board(const PieceTypeList& players, std::ifstream& file)
+	: m_boardState{ EBoardState::None }
+	, m_nodes{}
+	, m_playersPieces{}
+{}
+
+EPieceType Board::GetNodeType(uint8_t nodeIndex) const
+{
+	return m_nodes[nodeIndex]->GetPieceType();
+}
+
+PieceTypeList Board::GetAllNodesType() const
+{
+	PieceTypeList pieceTypes;
+	pieceTypes.reserve(m_nodes.size());
+
+	std::ranges::transform(m_nodes, std::back_inserter(pieceTypes), [](const auto& node) {
+		return node->GetPieceType();
+		});
+
+	return pieceTypes;
+}
+
+NodeList Board::GetAllNodes() const
+{
+	return m_nodes;
+}
+
+PieceIndexes Board::GetPossiblePlaces() const
+{
+	PieceIndexes possibilities;
+
+	for (const auto& node : m_nodes)
+		if (node->GetPieceType() == EPieceType::None)
+			possibilities.push_back(node->GetIndex());
+
+	return possibilities;
+}
+
+uint8_t Board::GetNodesCount() const
+{
+	return static_cast<uint8_t>(m_nodes.size());
+}
+
+void Board::AddPiece(uint8_t nodeIndex, EPlayerType player)
+{
+	if (m_nodes[nodeIndex]->GetPieceType() != EPieceType::None)
+	{
+		LOG.info("Invalid position when adding a piece.");
+		throw InvalidMoveException("This position is occupied");
+	}
+
+	m_nodes[nodeIndex]->SetPiece(player);
+
+	if (IsFullLine(nodeIndex))
+	{
+		m_boardState = EBoardState::Full_line;
+	}
+
+	++m_playersPieces[player].piecesOnTable;
+	--m_playersPieces[player].piecesToPlace;
+}
+
+void Board::RemovePiece(uint8_t nodeIndex, EPlayerType player)
+{
+	auto curentPieceType = m_nodes[nodeIndex]->GetPieceType();
+
+	if (curentPieceType == EPieceType::None)
+		throw InvalidMoveException("Can't remove an non-existent piece.");
+	if (curentPieceType == player)
+		throw InvalidMoveException("Can't remove your piece.");
+
+	if (!CanRemovePiece(nodeIndex))
+		throw InvalidMoveException("Delete the player's piece that is not in line");
+
+	--m_playersPieces[curentPieceType].piecesOnTable;
+	m_nodes[nodeIndex]->SetPiece(EPieceType::None);
+
+	m_boardState = EBoardState::None;
+}
+
+void Board::UndoAddPiece(uint8_t nodeIndex)
+{
+	auto curentPieceType = m_nodes[nodeIndex]->GetPieceType();
+
+	--m_playersPieces[curentPieceType].piecesOnTable;
+	++m_playersPieces[curentPieceType].piecesToPlace;
+	m_nodes[nodeIndex]->SetPiece(EPieceType::None);
+
+	m_boardState = EBoardState::None;
+}
+
+void Board::UndoMovePiece(uint8_t firstNodeIndex, uint8_t secondNodeIndex)
+{
+	m_nodes[firstNodeIndex]->SetPiece(m_nodes[secondNodeIndex]->GetPieceType());
+	m_nodes[secondNodeIndex]->SetPiece(EPieceType::None);
+
+	m_boardState = EBoardState::None;
+}
+
+void Board::UndoRemovePiece(uint8_t nodeIndex, EPlayerType player)
+{
+	m_nodes[nodeIndex]->SetPiece(player);
+
+	++m_playersPieces[player].piecesOnTable;
+
+	m_boardState = EBoardState::None;
+}
+
+void Board::RemovePlayerPieces(EPlayerType player)
+{
+	for (auto& node : m_nodes)
+	{
+		if (node->GetPieceType() == player)
+			node->SetPiece(EPieceType::None);
+	}
+	m_playersPieces.erase(player);
+}
+
+bool Board::CanRemovePiece(uint8_t nodeIndex) const
+{
+	if (IsFullLine(nodeIndex))
+	{
+		auto curentPieceType = m_nodes[nodeIndex]->GetPieceType();
+		auto indexes = GetSamePieceTypeNodeIndexes(curentPieceType);
+
+		return !std::any_of(indexes.begin(), indexes.end(),
+			[this](auto index) {
+				return !IsFullLine(index);
+			}
+		);
+	}
+
+	return true;
+}
+
+INode* Board::GetNodeFromIndex(uint8_t index) const
+{
+	if (index < 0 || index >= m_nodes.size())
+		throw std::invalid_argument("Index not found");
+	return m_nodes[index];
+}
+
+uint8_t Board::GetIndexFromNode(INode* node) const
+{
+	if (auto it = std::ranges::find(m_nodes, node); it != m_nodes.end())
+	{
+		return static_cast<uint8_t>(std::distance(m_nodes.begin(), it));
+	}
+
+	throw std::invalid_argument("Node not found");
+}
+
+uint8_t Board::CountSamePiece(ENeighboursPosition direction, INode* node, EPieceType windmillPieceType, uint8_t indexToIgnore, bool windmill) const
+{
+	if (node->GetNeighbour(direction) == nullptr)
+		return 0;
+	if (node->GetNeighbour(direction)->GetIndex() == indexToIgnore)
+		return 0;
+	if (!windmill && node->GetPieceType() != node->GetNeighbour(direction)->GetPieceType())
+		return 0;
+	if (windmill && node->GetNeighbour(direction)->GetPieceType() != windmillPieceType)
+		return 0;
+	return 1 + CountSamePiece(direction, node->GetNeighbour(direction), windmillPieceType, indexToIgnore, windmill);
+}
+
+void Board::IsMoveValid(uint8_t firstNodeIndex, uint8_t secondNodeIndex, EPlayerType movingPlayer) const
+{
+	auto firstNode = GetNodeFromIndex(firstNodeIndex);
+	auto secondNode = GetNodeFromIndex(secondNodeIndex);
+
+	EPieceType secondNodeType = GetNodeFromIndex(secondNodeIndex)->GetPieceType();
+
+	if (m_nodes[firstNodeIndex]->GetPieceType() == EPieceType::None)
+	{
+		LOG.info("Can't move a non-existing piece");
+		throw InvalidMoveException("Can't move a non-existing piece");
+	}
+	if (m_nodes[firstNodeIndex]->GetPieceType() != movingPlayer)
+	{
+		LOG.info("Can't move another player's piece");
+		throw InvalidMoveException("Can't move another player's piece");
+	}
+	if (secondNodeType != EPieceType::None && secondNodeType != movingPlayer)
+	{
+		LOG.info("Can't move piece on top of another player's piece.");
+		throw InvalidMoveException("Can't move piece on top of another player's piece.");
+	}
+
+	if (secondNodeType == movingPlayer)
+	{
+		LOG.info("Can't move piece on my piece.");
+		throw InvalidMoveException("Can't move piece on my piece.");
+	}
+
+	if (m_playersPieces.at(movingPlayer).piecesOnTable > 3)
+	{
+		auto firstNodeNeighbours = firstNode->GetNeighbours();
+
+		if (std::ranges::find(firstNodeNeighbours, secondNode) == firstNodeNeighbours.end())
+		{
+			LOG.info("Can't move piece on non-neighbor node.");
+			throw InvalidMoveException("Can't move piece on non-neighbor node.");
+		}
+	}
+
+}
+
+void Board::SetPlayerPiecesOnTable(EPlayerType player, int piecesOnTable)
+{
+	m_playersPieces[player].piecesOnTable = piecesOnTable;
+}
+
+void Board::SetPlayerPiecesToPlace(EPlayerType player, int piecesToPlace)
+{
+	m_playersPieces[player].piecesToPlace = piecesToPlace;
+}
+
+EBoardState Board::GetBoardState() const
+{
+	return m_boardState;
+}
+
+PieceIndexes Board::GetSamePieceTypeNodeIndexes(EPieceType type) const
+{
+	PieceIndexes typeIndexes;
+
+	for (uint8_t index{ 0 }; index < m_nodes.size(); index++)
+	{
+		if (m_nodes[index]->GetPieceType() == type)
+			typeIndexes.push_back(index);
+	}
+
+	return typeIndexes;
+}
+
+uint8_t Board::GetPlayerPiecesOnTable(EPlayerType player) const
+{
+	return m_playersPieces.at(player).piecesOnTable;
+}
+
+uint8_t Board::GetPlayerPiecesToPlace(EPlayerType player) const
+{
+	return m_playersPieces.at(player).piecesToPlace;
+}
+
+PieceIndexes Board::GetPossibleMovesFromNode(uint8_t nodeIndex, EPlayerType player) const
+{
+	auto node = GetNodeFromIndex(nodeIndex);
+
+	if (node->GetPieceType() == EPieceType::None)
+	{
+		LOG.info("Can't move a non-existing piece when searching possible moves");
+		throw InvalidMoveException("Can't move a non-existing piece");
+	}
+
+	if (node->GetPieceType() != player)
+	{
+		LOG.info("Can't move another player's piece when searching possible moves");
+		throw InvalidMoveException("Can't move another player's piece");
+	}
+
+	PieceIndexes possibilities;
+
+	auto isEmpty = [](const auto& n) { return n != nullptr && n->GetPieceType() == EPieceType::None; };
+
+	if (GetPlayerPiecesOnTable(node->GetPieceType()) > 3)
+	{
+		for (const auto& neighbour : node->GetNeighbours() | std::views::filter(isEmpty))
+			possibilities.push_back(neighbour->GetIndex());
+	}
+	else
+	{
+		for (const auto& boardNode : m_nodes | std::views::filter(isEmpty))
+			possibilities.push_back(boardNode->GetIndex());
+	}
+
+	return possibilities;
+}
+
+PieceIndexes Board::GetPossibleMoves(EPlayerType player) const
+{
+	PieceIndexes possibilities;
+
+	auto isEmpty = [](const auto& n) { return n != nullptr && n->GetPieceType() == EPieceType::None; };
+
+	if (GetPlayerPiecesOnTable(player) > 3)
+	{
+		for (const auto& boardNode : m_nodes)
+			if (boardNode->GetPieceType() == player)
+			{
+				for (const auto& neighbour : boardNode->GetNeighbours() | std::views::filter(isEmpty))
+					possibilities.push_back(neighbour->GetIndex());
+			}
+	}
+	else
+	{
+		for (const auto& boardNode : m_nodes | std::views::filter(isEmpty))
+			possibilities.push_back(boardNode->GetIndex());
+	}
+
+	return possibilities;
+}
+
+PieceIndexes Board::GetPossibleRemoves(EPlayerType player) const
+{
+	PieceIndexes possibilities;
+
+	for (const auto& playerPieces : m_playersPieces
+		| std::views::filter([player](const auto& pp) { return pp.first != player; })
+		| std::views::transform([this](const auto& pp) { return GetSamePieceTypeNodeIndexes(pp.first); })) {
+		possibilities.insert(possibilities.end(), playerPieces.begin(), playerPieces.end());
+	}
+
+	auto isNotRemovable = [this](const auto& nodeIndex) {
+		return !CanRemovePiece(nodeIndex);
+	};
+
+	possibilities.erase(std::remove_if(possibilities.begin(), possibilities.end(), isNotRemovable), possibilities.end());
+
+	return possibilities;
+}
+
+void Board::MovePiece(uint8_t firstNodeIndex, uint8_t secondNodeIndex, EPlayerType player)
+{
+	IsMoveValid(firstNodeIndex, secondNodeIndex, player);
+
+	m_nodes[secondNodeIndex]->SetPiece(player);
+	m_nodes[firstNodeIndex]->SetPiece(EPieceType::None);
+
+	if (IsFullLine(secondNodeIndex) && IsWindmillRule(secondNodeIndex, player))
+		m_boardState = EBoardState::Windmill;
+	else if (IsFullLine(secondNodeIndex))
+		m_boardState = EBoardState::Full_line;
+}
+
+Board::~Board()
+{
+	std::ranges::for_each(m_nodes, [](auto& node) {
+		delete node;
+		});
+}

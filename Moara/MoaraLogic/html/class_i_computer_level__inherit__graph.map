@@ -1,0 +1,9 @@
+<map id="IComputerLevel" name="IComputerLevel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="169,5,309,117"/>
+<area shape="rect" id="Node000002" href="$class_easy_computer_level.html" title=" " alt="" coords="5,176,145,288"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,130,130,178,126,175,174,126"/>
+<area shape="rect" id="Node000003" href="$class_hard_computer_level.html" title=" " alt="" coords="169,176,309,288"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,132,242,176,237,176,237,132"/>
+<area shape="rect" id="Node000004" href="$class_medium_computer_level.html" title=" " alt="" coords="334,165,478,299"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="306,126,344,164,340,168,302,130"/>
+</map>

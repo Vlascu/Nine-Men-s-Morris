@@ -1,0 +1,22 @@
+\doxysection{IBoard\+Loader.\+h}
+\hypertarget{_i_board_loader_8h_source}{}\label{_i_board_loader_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}FileException.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Constants.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}BoardConfigurations.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }PieceTypeList\ =\ std::vector<EPieceType>;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_board_loader}{IBoardLoader}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ LoadBoard(\textcolor{keyword}{const}\ PieceTypeList\&\ players,\ std::ifstream\&\ file)\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ LoadFromConfig(\textcolor{keyword}{const}\ PieceTypeList\&\ players,\ \textcolor{keyword}{const}\ BoardConfigMatrix\&\ boardMatrix,\ \textcolor{keywordtype}{int}\ piecesToPlace)\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SaveBoard(std::ofstream\&\ file)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00017\ \};}
+
+\end{DoxyCode}

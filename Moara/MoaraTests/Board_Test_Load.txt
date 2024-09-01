@@ -1,0 +1,8 @@
+# pieces to place
+0 1
+# nodes count
+3
+# board config
+0 1 2 -1 -1 -1
+1 -1 -1 0 2 0
+2 -1 1 -1 0 -1

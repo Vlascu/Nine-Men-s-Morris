@@ -1,0 +1,17 @@
+\doxysection{Easy\+Computer\+Level.\+h}
+\hypertarget{_easy_computer_level_8h_source}{}\label{_easy_computer_level_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}IComputerLevel.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_easy_computer_level}{EasyComputerLevel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_computer_level}{IComputerLevel}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ uint8\_t\ GetPlacingIndex(\textcolor{keyword}{const}\ BoardComputerPtr\&\ board,\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPieceType}}\ computerPieceType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00008\ \ \ \ \ MovePosition\ GetMovingIndex(\textcolor{keyword}{const}\ BoardComputerPtr\&\ board,\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPieceType}}\ computerPieceType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00009\ \ \ \ \ uint8\_t\ GetRemovingIndex(\textcolor{keyword}{const}\ BoardComputerPtr\&\ board,\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPieceType}}\ computerPieceType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ uint8\_t\ GetRandomIndex(uint8\_t\ lowerBound,\ uint8\_t\ upperBound);}
+\DoxyCodeLine{00012\ \};}
+
+\end{DoxyCode}

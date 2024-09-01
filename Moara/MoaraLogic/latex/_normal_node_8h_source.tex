@@ -1,0 +1,29 @@
+\doxysection{Normal\+Node.\+h}
+\hypertarget{_normal_node_8h_source}{}\label{_normal_node_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Node.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_normal_node}{NormalNode}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_node}{Node}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_normal_node}{NormalNode}}();}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}*\ Clone()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ Nodes\ GetNeighbours()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}*\ GetNeighbour(ENeighboursPosition\ position)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ SetNeighbour(\mbox{\hyperlink{class_i_node}{INode}}*\ neighbour,\ ENeighboursPosition\ position)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ SetNeighbours(std::vector<INode*>\ neighbours)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_normal_node}{\string~NormalNode}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}\ *m\_top;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}\ *m\_left;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}\ *m\_bottom;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}\ *m\_right;}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{f3cc653f-d68b-4a43-b6e6-0a3b22379692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Board">
+      <UniqueIdentifier>{ffee3599-d434-4d6f-be75-f1ce36e630d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Game">
+      <UniqueIdentifier>{feeb23e0-dfe9-4845-916e-b29e7787251c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Player">
+      <UniqueIdentifier>{46034a53-1e47-47fb-84fe-1ba9d72c9bc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Node">
+      <UniqueIdentifier>{cea80281-e320-481a-978e-b0f3c27e3a6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestConfigurations">
+      <UniqueIdentifier>{7f6509b2-a503-43c6-bbf1-f8f7ec5034e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Timer">
+      <UniqueIdentifier>{9db1f579-8969-4eb6-81f9-cff46b18e78b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardTests.cpp">
+      <Filter>Tests\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTests.cpp">
+      <Filter>Tests\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTests.cpp">
+      <Filter>Tests\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeTests.cpp">
+      <Filter>Tests\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="DiagonalsBoardTests.cpp">
+      <Filter>Tests\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerTests.cpp">
+      <Filter>Tests\Timer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Winning_Test_Initialization.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="board_out.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="Board_Test_Initialization.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="Board_Test_Load.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="Diag_Board_Test_Initialization.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="Undo_Test_Load.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="Undo_Test_Save.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="medium_computer_place.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="medium_computer_moving.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="hard_computer_advanced_full.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="hard_computer_advanced_block.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+    <Text Include="diagonal_board_save_test.txt">
+      <Filter>TestConfigurations</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+<map id="IGameListener.h" name="IGameListener.h">
+<area shape="rect" id="Node000001" title="Interface for game event listeners." alt="" coords="132,5,248,32"/>
+<area shape="rect" id="Node000002" href="$_e_piece_type_8h.html" title="Defines the types of pieces used in the game." alt="" coords="5,80,108,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,35,94,75,92,70,165,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="112,155,177,181"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="188,33,172,81,155,141,150,139,167,79,183,32"/>
+<area shape="rect" id="Node000004" href="$_e_game_state_8h.html" title="Defines the various states of the game." alt="" coords="182,80,289,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,31,221,65,217,68,195,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="313,80,381,107"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="218,30,307,71,305,75,216,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,105,119,143,116,147,70,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="221,109,173,147,170,143,218,105"/>
+</map>

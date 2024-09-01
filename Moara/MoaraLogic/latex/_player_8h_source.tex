@@ -1,0 +1,25 @@
+\doxysection{Player.\+h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}IPlayer.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_player}{IPlayer}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}();}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ type);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ GetType()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ SetType(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ TimerPtr\ GetTimer()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ m\_type;}
+\DoxyCodeLine{00019\ \ \ \ \ TimerPtr\ m\_playerTimer;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

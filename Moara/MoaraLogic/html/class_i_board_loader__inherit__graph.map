@@ -1,0 +1,11 @@
+<map id="IBoardLoader" name="IBoardLoader">
+<area shape="rect" id="Node000001" title=" " alt="" coords="84,5,209,117"/>
+<area shape="rect" id="Node000002" href="$class_i_board.html" title=" " alt="" coords="35,165,258,448"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,132,149,165,144,165,144,132"/>
+<area shape="rect" id="Node000003" href="$class_board.html" title=" " alt="" coords="35,496,258,907"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,463,149,496,144,496,144,463"/>
+<area shape="rect" id="Node000004" href="$class_diagonals_board.html" title=" " alt="" coords="5,955,136,1237"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="107,922,100,955,95,954,102,921"/>
+<area shape="rect" id="Node000005" href="$class_normal_board.html" title=" " alt="" coords="160,955,285,1237"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="192,921,198,954,193,955,186,922"/>
+</map>

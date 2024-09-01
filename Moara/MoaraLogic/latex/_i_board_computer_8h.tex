@@ -1,0 +1,51 @@
+\doxysection{IBoard\+Computer.\+h File Reference}
+\hypertarget{_i_board_computer_8h}{}\label{_i_board_computer_8h}\index{IBoardComputer.h@{IBoardComputer.h}}
+
+
+Interface for board computation logic used by the computer player.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}EPiece\+Type.\+h"{}}\newline
+Include dependency graph for IBoard\+Computer.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{_i_board_computer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i_board_computer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_board_computer}{IBoard\+Computer}}
+\begin{DoxyCompactList}\small\item\em Interface for calculating moves and game states for the computer player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_i_board_computer_8h_a070176fe310abf8c970781798955fb48}\label{_i_board_computer_8h_a070176fe310abf8c970781798955fb48} 
+using {\bfseries Node\+List} = std\+::vector$<$class \mbox{\hyperlink{class_i_node}{INode}}\texorpdfstring{$\ast$}{*}$>$
+\item 
+\Hypertarget{_i_board_computer_8h_ab37b5e9ae2e6116dee07a7a1a259c8ed}\label{_i_board_computer_8h_ab37b5e9ae2e6116dee07a7a1a259c8ed} 
+using {\bfseries Piece\+Indexes} = std\+::vector$<$uint8\+\_\+t$>$
+\item 
+\Hypertarget{_i_board_computer_8h_aba9c85fc0480e76e86aa1cf54c5b7433}\label{_i_board_computer_8h_aba9c85fc0480e76e86aa1cf54c5b7433} 
+using {\bfseries Moving\+Player\+Ptr} = std\+::shared\+\_\+ptr$<$class \mbox{\hyperlink{class_i_player}{IPlayer}}$>$
+\item 
+\Hypertarget{_i_board_computer_8h_aa29a92598e18738a15f6f827aa3434f0}\label{_i_board_computer_8h_aa29a92598e18738a15f6f827aa3434f0} 
+using {\bfseries EPlayer\+Type} = \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPiece\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for board computation logic used by the computer player. 
+
+This file defines the {\ttfamily \doxylink{class_i_board_computer}{IBoard\+Computer}} interface, which provides methods for calculating possible moves and game states for the computer player. 

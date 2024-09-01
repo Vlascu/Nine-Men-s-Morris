@@ -1,0 +1,5 @@
+<map id="Game::RemovePiece" name="Game::RemovePiece">
+<area shape="rect" id="Node000001" title="Removes a piece from a specified node index." alt="" coords="5,5,149,32"/>
+<area shape="rect" id="Node000002" href="$class_game.html#a7fbd4c403036a691d044f540f7b7e879" title="Checks and updates the state of the game to determine if there is a winning player." alt="" coords="197,5,375,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,16,181,16,181,21,149,21"/>
+</map>

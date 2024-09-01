@@ -1,0 +1,55 @@
+\doxysection{Board.\+h}
+\hypertarget{_board_8h_source}{}\label{_board_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}IBoard.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameConfig.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_board}{IBoard}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}();}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}(\textcolor{keyword}{const}\ PieceTypeList\&\ players,\ \textcolor{keyword}{const}\ BoardConfigMatrix\&\ boardMatrix,\ \textcolor{keywordtype}{int}\ piecesToPlace);}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}(\textcolor{keyword}{const}\ PieceTypeList\&\ players,\ std::ifstream\&\ file);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//IBoard}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPieceType}}\ GetNodeType(uint8\_t\ nodeIndex)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00015\ \ \ \ \ PieceTypeList\ GetAllNodesType()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00016\ \ \ \ \ PieceIndexes\ GetSamePieceTypeNodeIndexes(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPieceType}}\ type)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00017\ \ \ \ \ uint8\_t\ GetNodesCount()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00018\ \ \ \ \ EBoardState\ GetBoardState()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00019\ \ \ \ \ uint8\_t\ GetPlayerPiecesOnTable(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00020\ \ \ \ \ uint8\_t\ GetPlayerPiecesToPlace(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ AddPiece(uint8\_t\ nodeIndex,\ MovingPlayerPtr\ player)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ MovePiece(uint8\_t\ firstNodeIndex,\ uint8\_t\ secondNodeIndex,\ MovingPlayerPtr\ player)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ RemovePiece(uint8\_t\ nodeIndex,\ MovingPlayerPtr\ player)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//IBoardComputer}}
+\DoxyCodeLine{00026\ \ \ \ \ NodeList\ \mbox{\hyperlink{class_board_aef5a957756aa96fbcf833613e2097c40}{GetAllNodes}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00027\ \ \ \ \ PieceIndexes\ \mbox{\hyperlink{class_board_a8e01e3713ee6ca57d6ac2b8c36ca56c1}{GetPossiblePlaces}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00028\ \ \ \ \ PieceIndexes\ \mbox{\hyperlink{class_board_a20d35ec70735f5affd75df527d00540e}{GetPossibleMovesFromNode}}(uint8\_t\ nodeIndex,\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00029\ \ \ \ \ PieceIndexes\ \mbox{\hyperlink{class_board_a43dd8e6b96cfd79a19f2f1e5e70a8e04}{GetPossibleMoves}}(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00030\ \ \ \ \ PieceIndexes\ \mbox{\hyperlink{class_board_aa29bc04fd2db1cc1dcea88d04765dd9e}{GetPossibleRemoves}}(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ UndoAddPiece(uint8\_t\ nodeIndex)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ UndoMovePiece(uint8\_t\ firstNodeIndex,\ uint8\_t\ secondNodeIndex)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ UndoRemovePiece(uint8\_t\ nodeIndex,\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ RemovePlayerPieces(\mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPlayerType}}\ player)\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//Lasate\ public\ pt\ teste}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ IsMoveValid(uint8\_t\ firstNodeIndex,\ uint8\_t\ secondNodeIndex,\ MovingPlayerPtr\ movingPlayer)\ \textcolor{keyword}{const}\ \textcolor{keyword}{override}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_board}{\string~Board}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ CanRemovePiece(uint8\_t\ nodeIndex)\ \textcolor{keyword}{const}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_node}{INode}}*\ GetNodeFromIndex(uint8\_t\ index)\ \textcolor{keyword}{const}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ GetIndexFromNode(\mbox{\hyperlink{class_i_node}{INode}}*\ node)\ \textcolor{keyword}{const}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ CountSamePiece(ENeighboursPosition\ direction,\ \mbox{\hyperlink{class_i_node}{INode}}*\ node,\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3}{EPieceType}}\ windmillPieceType\ =\ \mbox{\hyperlink{_e_piece_type_8h_a2c4883759e8c06d3cd053516cd4873f3a6adf97f83acf6453d4a6a4b1070f3754}{EPieceType::None}},\ uint8\_t\ indexToIgnore\ =\ 255,\ \textcolor{keywordtype}{bool}\ windmill\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const}\ \textcolor{keyword}{final};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ NodeList\ m\_nodes;}
+\DoxyCodeLine{00048\ \ \ \ \ EBoardState\ m\_boardState;}
+\DoxyCodeLine{00049\ \ \ \ \ PlayersPieces\ m\_playersPieces;}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}
