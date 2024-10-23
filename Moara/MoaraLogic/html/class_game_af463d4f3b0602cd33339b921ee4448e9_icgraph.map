@@ -1,9 +1,0 @@
-<map id="Game::PlacePiece" name="Game::PlacePiece">
-<area shape="rect" id="Node000001" title="Places a piece at a specified node index." alt="" coords="393,5,523,32"/>
-<area shape="rect" id="Node000002" href="$class_game.html#a450c6b35926894336d1fed46e082b5a4" title="Allows the computer to make a move." alt="" coords="181,5,345,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="377,30,346,30,346,25,377,25"/>
-<area shape="poly" id="edge4_Node000002_Node000001" title=" " alt="" coords="361,7,393,7,393,13,361,12"/>
-<area shape="rect" id="Node000003" href="$class_game.html#ae9be2ffbb0923085e2e4e06d1885a1be" title="Moves a piece from one node to another." alt="" coords="5,5,133,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,30,133,30,133,25,165,25"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="148,7,180,7,180,12,148,12"/>
-</map>

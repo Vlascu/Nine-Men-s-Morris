@@ -1,9 +1,0 @@
-<map id="Game::LetComputerPlay" name="Game::LetComputerPlay">
-<area shape="rect" id="Node000001" title="Allows the computer to make a move." alt="" coords="184,31,348,57"/>
-<area shape="rect" id="Node000002" href="$class_game.html#ae9be2ffbb0923085e2e4e06d1885a1be" title="Moves a piece from one node to another." alt="" coords="7,5,134,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,43,118,35,119,30,169,38"/>
-<area shape="rect" id="Node000003" href="$class_game.html#af463d4f3b0602cd33339b921ee4448e9" title="Places a piece at a specified node index." alt="" coords="5,56,136,83"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="203,63,137,72,136,67,203,58"/>
-<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="150,17,218,27,217,33,149,23"/>
-<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="133,50,183,43,184,48,133,55"/>
-</map>
